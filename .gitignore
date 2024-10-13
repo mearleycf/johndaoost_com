@@ -146,3 +146,5 @@ dist
 
 # jetbrains setting folder
 .idea/
+
+node_modules
