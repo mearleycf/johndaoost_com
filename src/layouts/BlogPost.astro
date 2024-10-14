@@ -4,7 +4,10 @@ import Layout from './Layout.astro'
 const { frontmatter } = Astro.props
 ---
 
-<Layout title={frontmatter.title}>
+<Layout
+  title={frontmatter.title}
+  background={frontmatter.background || 'default'}
+>
   <article>
     <h1 class="mb-4 text-3xl font-bold">{frontmatter.title}</h1>
     <p class="mb-4 text-gray-600">
