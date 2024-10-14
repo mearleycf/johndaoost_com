@@ -1,3 +1,17 @@
 ---
+import Layout from './Layout.astro'
 
+const { frontmatter } = Astro.props
 ---
+
+<Layout title={frontmatter.title}>
+  <article>
+    <h1 class="mb-4 text-3xl font-bold">{frontmatter.title}</h1>
+    <p class="mb-4 text-gray-600">
+      Published on: {frontmatter.pubDate.slice(0, 10)}
+    </p>
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</Layout>

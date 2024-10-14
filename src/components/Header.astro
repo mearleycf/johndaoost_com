@@ -1,3 +1,35 @@
 ---
-
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+]
 ---
+
+<header class="bg-quinary text-primary py-4">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between">
+      <a
+        href="/"
+        class="text-2xl font-bold"
+        >Johnda Oost</a
+      >
+      <ul class="flex space-x-4">
+        {
+          navItems.map(item => (
+            <li>
+              <a
+                href={item.href}
+                class="hover:text-secondary transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

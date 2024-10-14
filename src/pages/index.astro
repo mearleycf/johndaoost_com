@@ -1,3 +1,33 @@
 ---
+import Layout from '../layouts/Layout.astro'
+import BlogPost from '../components/BlogPost.astro'
 
+const posts = await Astro.glob('./blog/*.md')
+const recentPosts = posts.slice(0, 3)
 ---
+
+<Layout
+  title="Home"
+  background="orchids.jpg"
+  showSidebar={true}
+>
+  <section class="mb-12">
+    <h1 class="mb-4 text-4xl font-bold">Welcome to Johnda Oost's Website</h1>
+    <p class="text-lg">Aspiring author and passionate storyteller.</p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-3xl font-bold">Recent Blog Posts</h2>
+    <div class="space-y-8">
+      {
+        recentPosts.map(post => (
+          <BlogPost
+            url={post.url}
+            title={post.frontmatter.title}
+            excerpt={post.frontmatter.excerpt}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

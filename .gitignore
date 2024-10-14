@@ -148,3 +148,4 @@ dist
 .idea/
 
 node_modules
+.vercel

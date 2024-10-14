@@ -1,3 +1,39 @@
 ---
-
+import Newsletter from './Newsletter.astro'
+import SocialLinks from './SocialLinks.astro'
 ---
+
+<footer class="bg-quinary text-primary py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div>
+        <h3 class="mb-4 text-xl font-bold">Join the Newsletter</h3>
+        <Newsletter />
+      </div>
+      <div>
+        <h3 class="mb-4 text-xl font-bold">Follow Johnda</h3>
+        <SocialLinks />
+      </div>
+      <div>
+        <h3 class="mb-4 text-xl font-bold">Quick Links</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/privacy-policy"
+              class="hover:text-secondary transition-colors"
+              >Privacy Policy</a>
+          </li>
+          <li>
+            <a
+              href="/cookie-policy"
+              class="hover:text-secondary transition-colors"
+              >Cookie Policy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <p>&copy; 2024 Johnda Oost. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
